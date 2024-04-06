@@ -1,1 +1,1 @@
-# grpc-cluster-demo
+# grpc-cluster
