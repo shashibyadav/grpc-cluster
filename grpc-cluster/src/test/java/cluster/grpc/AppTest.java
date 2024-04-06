@@ -1,4 +1,4 @@
-package cluster.java.grpc;
+package cluster.grpc;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
