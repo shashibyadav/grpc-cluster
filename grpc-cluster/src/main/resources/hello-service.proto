@@ -4,6 +4,7 @@ package cluster.grpc;
 
 service HelloService {
   rpc HelloMethod(HelloRequest) returns (HelloResponse);
+  rpc IncrementCount(IncrementCounter) returns (IncrementCounter);
 }
 
 message HelloRequest {
@@ -12,4 +13,8 @@ message HelloRequest {
 
 message HelloResponse {
   string message = 1;
+}
+
+message IncrementCounter {
+  int32 counter = 1;
 }

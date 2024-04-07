@@ -46,6 +46,37 @@ public final class HelloServiceGrpc {
     return getHelloMethodMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<cluster.grpc.HelloServiceOuterClass.IncrementCounter,
+      cluster.grpc.HelloServiceOuterClass.IncrementCounter> getIncrementCountMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "IncrementCount",
+      requestType = cluster.grpc.HelloServiceOuterClass.IncrementCounter.class,
+      responseType = cluster.grpc.HelloServiceOuterClass.IncrementCounter.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cluster.grpc.HelloServiceOuterClass.IncrementCounter,
+      cluster.grpc.HelloServiceOuterClass.IncrementCounter> getIncrementCountMethod() {
+    io.grpc.MethodDescriptor<cluster.grpc.HelloServiceOuterClass.IncrementCounter, cluster.grpc.HelloServiceOuterClass.IncrementCounter> getIncrementCountMethod;
+    if ((getIncrementCountMethod = HelloServiceGrpc.getIncrementCountMethod) == null) {
+      synchronized (HelloServiceGrpc.class) {
+        if ((getIncrementCountMethod = HelloServiceGrpc.getIncrementCountMethod) == null) {
+          HelloServiceGrpc.getIncrementCountMethod = getIncrementCountMethod =
+              io.grpc.MethodDescriptor.<cluster.grpc.HelloServiceOuterClass.IncrementCounter, cluster.grpc.HelloServiceOuterClass.IncrementCounter>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "IncrementCount"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cluster.grpc.HelloServiceOuterClass.IncrementCounter.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cluster.grpc.HelloServiceOuterClass.IncrementCounter.getDefaultInstance()))
+              .setSchemaDescriptor(new HelloServiceMethodDescriptorSupplier("IncrementCount"))
+              .build();
+        }
+      }
+    }
+    return getIncrementCountMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -100,6 +131,13 @@ public final class HelloServiceGrpc {
         io.grpc.stub.StreamObserver<cluster.grpc.HelloServiceOuterClass.HelloResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getHelloMethodMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void incrementCount(cluster.grpc.HelloServiceOuterClass.IncrementCounter request,
+        io.grpc.stub.StreamObserver<cluster.grpc.HelloServiceOuterClass.IncrementCounter> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getIncrementCountMethod(), responseObserver);
+    }
   }
 
   /**
@@ -136,6 +174,14 @@ public final class HelloServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getHelloMethodMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void incrementCount(cluster.grpc.HelloServiceOuterClass.IncrementCounter request,
+        io.grpc.stub.StreamObserver<cluster.grpc.HelloServiceOuterClass.IncrementCounter> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getIncrementCountMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -159,6 +205,13 @@ public final class HelloServiceGrpc {
     public cluster.grpc.HelloServiceOuterClass.HelloResponse helloMethod(cluster.grpc.HelloServiceOuterClass.HelloRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getHelloMethodMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public cluster.grpc.HelloServiceOuterClass.IncrementCounter incrementCount(cluster.grpc.HelloServiceOuterClass.IncrementCounter request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getIncrementCountMethod(), getCallOptions(), request);
     }
   }
 
@@ -185,9 +238,18 @@ public final class HelloServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getHelloMethodMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cluster.grpc.HelloServiceOuterClass.IncrementCounter> incrementCount(
+        cluster.grpc.HelloServiceOuterClass.IncrementCounter request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getIncrementCountMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_HELLO_METHOD = 0;
+  private static final int METHODID_INCREMENT_COUNT = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -209,6 +271,10 @@ public final class HelloServiceGrpc {
         case METHODID_HELLO_METHOD:
           serviceImpl.helloMethod((cluster.grpc.HelloServiceOuterClass.HelloRequest) request,
               (io.grpc.stub.StreamObserver<cluster.grpc.HelloServiceOuterClass.HelloResponse>) responseObserver);
+          break;
+        case METHODID_INCREMENT_COUNT:
+          serviceImpl.incrementCount((cluster.grpc.HelloServiceOuterClass.IncrementCounter) request,
+              (io.grpc.stub.StreamObserver<cluster.grpc.HelloServiceOuterClass.IncrementCounter>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -235,6 +301,13 @@ public final class HelloServiceGrpc {
               cluster.grpc.HelloServiceOuterClass.HelloRequest,
               cluster.grpc.HelloServiceOuterClass.HelloResponse>(
                 service, METHODID_HELLO_METHOD)))
+        .addMethod(
+          getIncrementCountMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              cluster.grpc.HelloServiceOuterClass.IncrementCounter,
+              cluster.grpc.HelloServiceOuterClass.IncrementCounter>(
+                service, METHODID_INCREMENT_COUNT)))
         .build();
   }
 
@@ -284,6 +357,7 @@ public final class HelloServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new HelloServiceFileDescriptorSupplier())
               .addMethod(getHelloMethodMethod())
+              .addMethod(getIncrementCountMethod())
               .build();
         }
       }

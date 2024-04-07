@@ -1146,6 +1146,492 @@ public final class HelloServiceOuterClass {
 
   }
 
+  public interface IncrementCounterOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cluster.grpc.IncrementCounter)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 counter = 1;</code>
+     * @return The counter.
+     */
+    int getCounter();
+  }
+  /**
+   * Protobuf type {@code cluster.grpc.IncrementCounter}
+   */
+  public  static final class IncrementCounter extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cluster.grpc.IncrementCounter)
+      IncrementCounterOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use IncrementCounter.newBuilder() to construct.
+    private IncrementCounter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private IncrementCounter() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new IncrementCounter();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private IncrementCounter(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              counter_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cluster.grpc.HelloServiceOuterClass.internal_static_cluster_grpc_IncrementCounter_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cluster.grpc.HelloServiceOuterClass.internal_static_cluster_grpc_IncrementCounter_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cluster.grpc.HelloServiceOuterClass.IncrementCounter.class, cluster.grpc.HelloServiceOuterClass.IncrementCounter.Builder.class);
+    }
+
+    public static final int COUNTER_FIELD_NUMBER = 1;
+    private int counter_;
+    /**
+     * <code>int32 counter = 1;</code>
+     * @return The counter.
+     */
+    public int getCounter() {
+      return counter_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (counter_ != 0) {
+        output.writeInt32(1, counter_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (counter_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, counter_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cluster.grpc.HelloServiceOuterClass.IncrementCounter)) {
+        return super.equals(obj);
+      }
+      cluster.grpc.HelloServiceOuterClass.IncrementCounter other = (cluster.grpc.HelloServiceOuterClass.IncrementCounter) obj;
+
+      if (getCounter()
+          != other.getCounter()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + COUNTER_FIELD_NUMBER;
+      hash = (53 * hash) + getCounter();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cluster.grpc.HelloServiceOuterClass.IncrementCounter parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cluster.grpc.HelloServiceOuterClass.IncrementCounter parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cluster.grpc.HelloServiceOuterClass.IncrementCounter parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cluster.grpc.HelloServiceOuterClass.IncrementCounter parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cluster.grpc.HelloServiceOuterClass.IncrementCounter parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cluster.grpc.HelloServiceOuterClass.IncrementCounter parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cluster.grpc.HelloServiceOuterClass.IncrementCounter parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cluster.grpc.HelloServiceOuterClass.IncrementCounter parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cluster.grpc.HelloServiceOuterClass.IncrementCounter parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cluster.grpc.HelloServiceOuterClass.IncrementCounter parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cluster.grpc.HelloServiceOuterClass.IncrementCounter parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cluster.grpc.HelloServiceOuterClass.IncrementCounter parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cluster.grpc.HelloServiceOuterClass.IncrementCounter prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code cluster.grpc.IncrementCounter}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cluster.grpc.IncrementCounter)
+        cluster.grpc.HelloServiceOuterClass.IncrementCounterOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cluster.grpc.HelloServiceOuterClass.internal_static_cluster_grpc_IncrementCounter_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cluster.grpc.HelloServiceOuterClass.internal_static_cluster_grpc_IncrementCounter_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cluster.grpc.HelloServiceOuterClass.IncrementCounter.class, cluster.grpc.HelloServiceOuterClass.IncrementCounter.Builder.class);
+      }
+
+      // Construct using cluster.grpc.HelloServiceOuterClass.IncrementCounter.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        counter_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cluster.grpc.HelloServiceOuterClass.internal_static_cluster_grpc_IncrementCounter_descriptor;
+      }
+
+      @java.lang.Override
+      public cluster.grpc.HelloServiceOuterClass.IncrementCounter getDefaultInstanceForType() {
+        return cluster.grpc.HelloServiceOuterClass.IncrementCounter.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cluster.grpc.HelloServiceOuterClass.IncrementCounter build() {
+        cluster.grpc.HelloServiceOuterClass.IncrementCounter result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cluster.grpc.HelloServiceOuterClass.IncrementCounter buildPartial() {
+        cluster.grpc.HelloServiceOuterClass.IncrementCounter result = new cluster.grpc.HelloServiceOuterClass.IncrementCounter(this);
+        result.counter_ = counter_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cluster.grpc.HelloServiceOuterClass.IncrementCounter) {
+          return mergeFrom((cluster.grpc.HelloServiceOuterClass.IncrementCounter)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cluster.grpc.HelloServiceOuterClass.IncrementCounter other) {
+        if (other == cluster.grpc.HelloServiceOuterClass.IncrementCounter.getDefaultInstance()) return this;
+        if (other.getCounter() != 0) {
+          setCounter(other.getCounter());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        cluster.grpc.HelloServiceOuterClass.IncrementCounter parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cluster.grpc.HelloServiceOuterClass.IncrementCounter) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int counter_ ;
+      /**
+       * <code>int32 counter = 1;</code>
+       * @return The counter.
+       */
+      public int getCounter() {
+        return counter_;
+      }
+      /**
+       * <code>int32 counter = 1;</code>
+       * @param value The counter to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCounter(int value) {
+        
+        counter_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 counter = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCounter() {
+        
+        counter_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cluster.grpc.IncrementCounter)
+    }
+
+    // @@protoc_insertion_point(class_scope:cluster.grpc.IncrementCounter)
+    private static final cluster.grpc.HelloServiceOuterClass.IncrementCounter DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cluster.grpc.HelloServiceOuterClass.IncrementCounter();
+    }
+
+    public static cluster.grpc.HelloServiceOuterClass.IncrementCounter getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<IncrementCounter>
+        PARSER = new com.google.protobuf.AbstractParser<IncrementCounter>() {
+      @java.lang.Override
+      public IncrementCounter parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new IncrementCounter(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<IncrementCounter> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<IncrementCounter> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cluster.grpc.HelloServiceOuterClass.IncrementCounter getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cluster_grpc_HelloRequest_descriptor;
   private static final 
@@ -1156,6 +1642,11 @@ public final class HelloServiceOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cluster_grpc_HelloResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cluster_grpc_IncrementCounter_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cluster_grpc_IncrementCounter_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1167,9 +1658,12 @@ public final class HelloServiceOuterClass {
     java.lang.String[] descriptorData = {
       "\n\023hello-service.proto\022\014cluster.grpc\"\037\n\014H" +
       "elloRequest\022\017\n\007message\030\001 \001(\t\" \n\rHelloRes" +
-      "ponse\022\017\n\007message\030\001 \001(\t2V\n\014HelloService\022F" +
-      "\n\013HelloMethod\022\032.cluster.grpc.HelloReques" +
-      "t\032\033.cluster.grpc.HelloResponseb\006proto3"
+      "ponse\022\017\n\007message\030\001 \001(\t\"#\n\020IncrementCount" +
+      "er\022\017\n\007counter\030\001 \001(\0052\250\001\n\014HelloService\022F\n\013" +
+      "HelloMethod\022\032.cluster.grpc.HelloRequest\032" +
+      "\033.cluster.grpc.HelloResponse\022P\n\016Incremen" +
+      "tCount\022\036.cluster.grpc.IncrementCounter\032\036" +
+      ".cluster.grpc.IncrementCounterb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1187,6 +1681,12 @@ public final class HelloServiceOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cluster_grpc_HelloResponse_descriptor,
         new java.lang.String[] { "Message", });
+    internal_static_cluster_grpc_IncrementCounter_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_cluster_grpc_IncrementCounter_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cluster_grpc_IncrementCounter_descriptor,
+        new java.lang.String[] { "Counter", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
